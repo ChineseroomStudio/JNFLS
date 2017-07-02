@@ -1,0 +1,8 @@
+
+.idea/
+
+*.pyc
+
+env_jnfls/
+
+db.sqlite3
