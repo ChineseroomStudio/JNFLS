@@ -59,8 +59,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 	#
 	my_department = models.ForeignKey('StudentUnionDepartment', null=True, blank=True)
 	my_schoolclass = models.ForeignKey('classes.SchoolClass', null=True, blank=True)
-	my_clubs = models.ManyToManyField('clubs.Club')
-	# my_dorm = models.ForeignKey('Dorm', null=True, blank=True)
+	my_dorm = models.ForeignKey('dorms.Dorm', null=True, blank=True)
 
 	# Settings
 	USERNAME_FIELD = 'username'
