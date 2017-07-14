@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def landing_view(request):
+	pass
+
+
+def test_view(request):
+	return render(request, 'views/index.html')
