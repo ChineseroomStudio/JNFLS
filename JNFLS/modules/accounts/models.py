@@ -7,9 +7,6 @@ class AccountManager(BaseUserManager):
 	use_in_migrations = True
 
 	def _create_account(self, password, **extra_fields):
-		"""
-		Creates and saves a User with the given email and password.
-		"""
 		if not extra_fields.get('username'):
 			raise ValueError('The username must be set')
 

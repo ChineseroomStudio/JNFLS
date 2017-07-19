@@ -19,10 +19,16 @@ from django.contrib import admin
 from JNFLS.modules.accounts import views as accounts_view
 
 urlpatterns = [
-	url(r'^$', accounts_view.test_view, name='home'),
+	# Account URL start
+	url(r'^$', accounts_view.home_view, name='home'),
 	url(r'^login/$', accounts_view.login_view, name='login'),
-	url(r'^login-action/$', accounts_view.login_action),
+	url(r'^logout/$', accounts_view.logout_view, name='logout'),
+	url(r'^register/$', accounts_view.register_view, name='register'),
 
+	# Account URL end
+
+	# Admin URL start
 	url(r'^admin/', admin.site.urls),
+	# Admin URL end
 
 ]
