@@ -5,6 +5,7 @@ from django.db import models
 class Club(models.Model):
 	name = models.CharField(max_length=100)
 
+	club_head = models.ForeignKey('accounts.Account', related_name='head_clubs')
 	club_manager = models.ManyToManyField('accounts.Account', related_name='managing_clubs')
 	club_members = models.ManyToManyField('accounts.Account', related_name='my_clubs')
 

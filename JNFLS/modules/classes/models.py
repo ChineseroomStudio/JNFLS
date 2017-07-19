@@ -10,7 +10,12 @@ class SchoolClass(models.Model):
 	number = models.IntegerField(default=0)
 	grade = models.IntegerField(choices=GRADE_CHOICE)
 	head_teacher = models.ForeignKey('accounts.Account')
-	slogan = models.CharField(max_length=100)
+
+	# Relations
+	# 1) students
+
+	def __str__(self):
+		return '高' + str(self.grade) + ' (' + str(self.number) + ')班'
 
 
 # 流动红旗

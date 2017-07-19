@@ -17,13 +17,12 @@ class AccountAdmin(UserAdmin):
 		('权限', {'fields': ('is_staff',)}),
 		('时间戳', {'fields': ('created', 'updated')})
 	)
-	readonly_fields = ('created', 'updated', 'is_staff',)
+	readonly_fields = ['created', 'updated']
 
 	add_fieldsets = (
-		(None, {
-			'classes': ('wide',),
-			'fields' : ('username', 'password')}
-		 ),
+		(None, { 'classes': ('wide',), 'fields' : ('username', 'password', 'type', )}),
+		('权限 (选填)', {'fields': ('is_student_union', 'is_head_teacher', 'is_staff', )}),
+		('学生信息 (选填)',{'fields': ('my_student_union_dep', 'my_schoolclass', 'my_dorm' )})
 	)
 
 admin.site.register(Account, AccountAdmin)

@@ -50,11 +50,12 @@ INSTALLED_APPS = [
 
 	'JNFLS.modules.accounts',
 	'JNFLS.modules.boards',
+	'JNFLS.modules.broadcasts',
 	'JNFLS.modules.classes',
 	'JNFLS.modules.clubs',
 	'JNFLS.modules.dorms',
 	'JNFLS.modules.sports',
-	'JNFLS.modules.posts',
+	'JNFLS.modules.discussions',
 	'JNFLS.modules.quantification',
 
 ]

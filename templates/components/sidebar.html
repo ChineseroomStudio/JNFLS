@@ -22,6 +22,8 @@
                     IN+
                 </div>
             </li>
+
+            {% if user.type is 0 %}
             <!-- Student sidebar start -->
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">我的班级</span> <span class="fa arrow"></span></a>
@@ -32,7 +34,7 @@
                 </ul>
             </li>
             <li>
-                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">我的量化</span></a>
+                <a href="index.html"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">我的量化</span></a>
             </li>
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">我的社团</span> <span class="fa arrow"></span></a>
@@ -54,7 +56,8 @@
             </li>
             <!-- Student sidebar end -->
 
-            <!-- Teacher sidebar start -->
+            {% elif user.type is 1 and user.is_head_teacher %}
+            <!-- Head teacher sidebar start -->
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">班级量化</span></a>
             </li>
@@ -70,8 +73,9 @@
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">广播申请</span></a>
             </li>
-            <!-- Teacher sidebar end -->
+            <!-- Head teacher sidebar end -->
 
+            {% elif user.type is 0 and user.is_student_union %}
             <!-- Student Union sidebar start -->
             <li class="special_link">
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">学生会</span> <span class="fa arrow"></span></a>
@@ -111,6 +115,8 @@
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">广播申请</span></a>
             </li>
             <!-- Student Union sidebar end -->
+            {% endif  %}
+
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">年级量化</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">

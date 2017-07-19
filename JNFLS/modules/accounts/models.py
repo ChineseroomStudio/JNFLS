@@ -30,8 +30,8 @@ class AccountManager(BaseUserManager):
 class Account(AbstractBaseUser, PermissionsMixin):
 	TYPE_CHOICES = (
 		(0, '学生'),
-		(1, '家长'),
-		(2, '教师')
+		(1, '教师'),
+		(2, '家长')
 	)
 	# Auth
 	username = models.CharField(max_length=40, unique=True, null=True)
@@ -53,8 +53,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
 	updated = models.DateTimeField(auto_now=True)
 	# Relations
 	objects = AccountManager()
-	#
-	my_department = models.ForeignKey('StudentUnionDepartment', null=True, blank=True)
+
+	my_student_union_dep = models.ForeignKey('StudentUnionDepartment', null=True, blank=True)
 	my_schoolclass = models.ForeignKey('classes.SchoolClass', null=True, blank=True)
 	my_dorm = models.ForeignKey('dorms.Dorm', null=True, blank=True)
 

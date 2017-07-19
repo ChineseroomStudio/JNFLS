@@ -1,8 +1,39 @@
-
+# IDE Files
 .idea/
 
+# Python compiles
 *.pyc
 
+# Env
 env_jnfls/
 
+# Test DB
 db.sqlite3
+
+# Local migratons
+/JNFLS/modules/boards/migrations/*
+!/JNFLS/modules/boards/migrations/__init__.py
+
+/JNFLS/modules/accounts/migrations/*
+!/JNFLS/modules/accounts/migrations/__init__.py
+
+/JNFLS/modules/broadcasts/migrations/*
+!/JNFLS/modules/broadcasts/migrations/__init__.py
+
+/JNFLS/modules/classes/migrations/*
+!/JNFLS/modules/classes/migrations/__init__.py
+
+/JNFLS/modules/clubs/migrations/*
+!/JNFLS/modules/clubs/migrations/__init__.py
+
+/JNFLS/modules/discussions/migrations/*
+!/JNFLS/modules/discussions/migrations/__init__.py
+
+/JNFLS/modules/dorms/migrations/*
+!/JNFLS/modules/dorms/migrations/__init__.py
+
+/JNFLS/modules/quantification/migrations/*
+!/JNFLS/modules/quantification/migrations/__init__.py
+
+/JNFLS/modules/sports/migrations/*
+!/JNFLS/modules/sports/migrations/__init__.py

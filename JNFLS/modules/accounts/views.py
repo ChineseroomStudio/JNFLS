@@ -38,4 +38,4 @@ def register_view(request):
 
 def logout_view(request):
 	logout(request)
-	return render(request, 'views/login.html')
+	return redirect('login')
