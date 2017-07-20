@@ -6,6 +6,7 @@ from .models import Account
 from .forms import AccountChangeForm, AccountCreationForm
 
 
+@admin.register(Account)
 class AccountAdmin(UserAdmin):
 	form = AccountChangeForm
 	add_form = AccountCreationForm
@@ -20,10 +21,10 @@ class AccountAdmin(UserAdmin):
 	readonly_fields = ['created', 'updated']
 
 	add_fieldsets = (
-		(None, { 'classes': ('wide',), 'fields' : ('username', 'password', 'type', )}),
-		('权限 (选填)', {'fields': ('is_student_union', 'is_head_teacher', 'is_staff', )}),
-		('学生信息 (选填)',{'fields': ('my_student_union_dep', 'my_schoolclass', 'my_dorm' )})
+		(None, {'classes': ('wide',), 'fields': ('username', 'password', 'type',)}),
+		('权限 (选填)', {'fields': ('is_student_union', 'is_head_teacher', 'is_staff',)}),
+		('学生信息 (选填)', {'fields': ('my_student_union_dep', 'my_schoolclass', 'my_dorm')})
 	)
 
-admin.site.register(Account, AccountAdmin)
+
 admin.site.unregister(Group)

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>学生管理系统 - {% block title %}{% endblock %}</title>
+    <title>JNFLS学生中心 - {% block nav_title %}{% endblock %}</title>
 
     <link href="{% get_static_prefix %}css/bootstrap.min.css" rel="stylesheet">
     <link href="{% get_static_prefix %}font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 <body class="fixed-navigation">
 <div id="wrapper">
     {% include 'components/sidebar.html' %}
-    <div id="page-wrapper" class="gray-bg sidebar-content">
+    <div id="page-wrapper" class="gray-bg">
         {% include 'components/topbar.html' %}
         {% block content %} {% endblock %}
         {% include 'components/footer.html' %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{{ post.title }}</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a>Miscellaneous</a>
+                </li>
+                <li class="active">
+                    <strong>{{ post.title }}</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="text-center article-title">
+                            <h1>
+                                {{ post.title }}
+                            </h1>
+                            <div class="col-md-12">
+                                发布日期 <span class="text-muted">: {{ post.created }}</span> | 作者: <strong>{{ post.creator }}</strong> | <i class="fa fa-eye"> </i> {{ post.views }}
+                            </div>
+                        </div>
+                        <p>
+                            {{ post.content }}
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

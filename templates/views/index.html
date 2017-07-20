@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
     <!-- Right sidebar start -->
+    {% comment %}
     <div class="sidebard-panel">
         <div>
             <h4>Messages <span class="badge badge-info pull-right">16</span></h4>
@@ -82,6 +83,7 @@
             </div>
         </div>
     </div>
+    {% endcomment %}
     <!-- Right sidebar end -->
 
     <!-- Content start -->
@@ -91,11 +93,11 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
                         <div>
-                                        <span class="pull-right text-right">
-                                        <small>Average value of sales in the past month in: <strong>United states</strong></small>
-                                            <br/>
-                                            All sales: 162,862
-                                        </span>
+                            <span class="pull-right text-right">
+                            <small>Average value of sales in the past month in: <strong>United states</strong></small>
+                                <br/>
+                                All sales: 162,862
+                            </span>
                             <h1 class="m-b-xs">$ 50,992</h1>
                             <h3 class="font-bold no-margins">
                                 Half-year revenue margin
