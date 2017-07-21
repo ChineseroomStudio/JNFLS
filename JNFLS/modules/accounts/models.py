@@ -55,7 +55,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 	objects = AccountManager()
 
 	my_student_union_dep = models.ForeignKey('StudentUnionDepartment', null=True, blank=True)
-	my_schoolclass = models.ForeignKey('classes.SchoolClass', null=True, blank=True)
+	my_school_class = models.ForeignKey('classes.SchoolClass', null=True, blank=True)
 	my_dorm = models.ForeignKey('dorms.Dorm', null=True, blank=True)
 
 	# Settings

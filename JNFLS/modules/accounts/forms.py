@@ -1,14 +1,13 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from .models import Account
-from django.contrib.auth.forms import UserCreationForm
 
 
 class LoginForm(forms.Form):
 	username = forms.CharField(max_length=100)
 	password = forms.CharField(max_length=100)
 
-
+# TODO
 class RegisterFrom(forms.Form):
 	pass
 

@@ -11,6 +11,13 @@ class Club(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True)
 
+	class Meta:
+		permissions = (
+			("club_manager", "可以管理社团"),
+			("class_post", "可以发布班级公告"),
+			("club_post", "可以发布社团公告"),
+		)
+
 	def __str__(self):
 		return self.name
 

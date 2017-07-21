@@ -33,6 +33,13 @@ class Post(models.Model):
 	created = models.DateTimeField(editable=False)
 	updated = models.DateTimeField()
 
+	class Meta:
+		permissions = (
+			("school_post", "可以发布校园公告"),
+			("class_post", "可以发布班级公告"),
+			("club_post", "可以发布社团公告"),
+		)
+
 	def __str__(self):
 		return self.title
 

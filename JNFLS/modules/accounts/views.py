@@ -33,6 +33,7 @@ def register_view(request):
 	if request.method == 'GET':
 		return render(request, 'views/register.html')
 	elif request.method == 'POST':
+		# TODO
 		pass
 
 
