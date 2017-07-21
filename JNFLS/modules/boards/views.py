@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import Http404
 
 from .models import PostBoard, Post
+from .forms import NewPostForm
 
 
 @login_required
@@ -14,13 +15,24 @@ def school_post_board_view(request):
 
 
 @login_required
+@permission_required('boards.school_post' , raise_exception=True)
 def school_post_new_view(request):
 	if request.method == 'GET':
-		data = {'headbar-title'   : '校园公告',
-		        'headbar-subtitle': '校园管理', }
+		data = {'headbar_title'   : '校园公告',
+		        'headbar_subtitle': '校园管理', }
 		return render(request, 'views/new-post.html', data)
 	elif request.method == 'POST':
-		pass
+		form = NewPostForm(request.POST)
+		if form.is_valid():
+			title = form.cleaned_data['title']
+			content = form.cleaned_data['title']
+
+			school_post_board = PostBoard.objects.get(type=0)
+			new_post = Post(title=title, content=content, board_id=school_post_board.id)
+			new_post.save()
+			return redirect('school-post-article', post_id=new_post.id)
+		else:
+			return redirect('school-post-new')
 
 
 @login_required
