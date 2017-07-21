@@ -11,8 +11,8 @@ class DiscussionBoard(models.Model):
 
 	name = models.CharField(max_length=100)
 
-	my_class = models.OneToOneField('classes.SchoolClass', related_name='discussion_board', null=True)
-	my_club = models.OneToOneField('clubs.Club', related_name='discussion_board', null=True)
+	my_class = models.OneToOneField('classes.SchoolClass', related_name='discussion_board', null=True, blank=True)
+	my_club = models.OneToOneField('clubs.Club', related_name='discussion_board', null=True, blank=True)
 	type = models.IntegerField(choices=TYPE_CHOICES)
 
 	def __str__(self):
@@ -41,7 +41,7 @@ class DiscussionReply(models.Model):
 	content = models.TextField()
 
 	creator = models.ForeignKey('accounts.Account', related_name='replies')
-	post = models.ForeignKey('DiscussionPost', related_name='replies')
+	post = models.ForeignKey('DiscussionPost', related_name='replies', on_delete=models.CASCADE)
 	reply_to = models.ForeignKey('DiscussionReply', null=True)
 
 	is_anonymous = models.BooleanField(default=False)

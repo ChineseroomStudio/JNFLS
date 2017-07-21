@@ -25,17 +25,20 @@
                     <div class="ibox">
                         <div class="ibox-content">
                             <h2>
-                                {{ post.title }}
+                                <a href="{% url 'school-post-article' post.id %}">
+                                    {{ post.title }}
+                                </a>
                             </h2>
                             <div class="m-b-xs">
-                                <strong>{{ post.creator }}</strong>
+                                作者：<strong>{{ post.creator }}</strong>
                             </div>
                             <p>
-                                {{ post.content  }}
+                                {{ post.content | truncatewords:50 }}
                             </p>
                             <div class="row">
                                 <div class="col-md-12">
-                                    发布日期 <span class="text-muted"><i class="fa fa-clock-o"></i> {{ post.created }}</span> | 上次更新 <span class="text-muted"><i class="fa fa-clock-o"></i> {{ post.updated }} </span>
+                                    发布日期 <span class="text-muted"><i class="fa fa-clock-o"></i> {{ post.created }}</span> | 上次更新 <span class="text-muted"><i
+                                        class="fa fa-clock-o"></i> {{ post.updated }} </span>
                                 </div>
                             </div>
                         </div>
